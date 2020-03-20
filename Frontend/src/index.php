@@ -42,7 +42,6 @@
             </p>
         <?php
         }
-        $reponse->closeCursor();
        ?>
 
     </body>

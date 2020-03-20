@@ -21,16 +21,6 @@ services:
       - 3306:3306
     networks:
       - element-network
-  element-adminer:
-    image: adminer:4.7.6
-    container_name: element-adminer
-    restart: always
-    ports:
-      - 8080:8080
-    networks:
-      - element-network
-    depends_on:
-      - element-db
 
 networks:
   element-network:
