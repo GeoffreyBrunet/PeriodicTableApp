@@ -9,4 +9,6 @@ docker-compose up -d
 Docker compose create  containers :
 * One for frontend (with PHP 7.4)
 * One for database (with MariaDB 10.5.1)
+
 ## Up and running on Kubernetes
+k8s folder contain all manifests for deploy this app on a kubernetes cluster.
