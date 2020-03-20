@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  element-app:
+    build: Frontend/.
+    container_name: element-app
+    restart: always
+    ports:
+      - 8000:80
+    networks:
+      - element-network
+    volumes:
+      - ./Frontend/src:/app
+    depends_on:
+      - element-db
+  element-db:
+    build: backend/.
+    container_name: element-db
+    restart: always
+    ports:
+      - 3306:3306
+    networks:
+      - element-network
+  element-adminer:
+    image: adminer:4.7.6
+    container_name: element-adminer
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - element-network
+    depends_on:
+      - element-db
+
+networks:
+  element-network:
